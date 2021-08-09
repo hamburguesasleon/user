@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/489882f525.js" crossorigin="anonymous"></script>
+    <title>Hamburguesas De León</title>
+    <link rel="icon" href="../img/logo.ico">
+    <link rel="stylesheet" href="../style/mainStyleMobile.css">
+    <link rel="stylesheet" href="../style/mainStyleDesk.css">
+    <link rel="stylesheet" href="../style/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playball&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="fullBody" style="background-color: #343a40 !important">
+    <div class="header-container">
+        <div class="header-container">
+            <header>
+                <div class="logo">
+                    <img src="public/img/logo.jpg" class="logo-img">
+                    <h1 class="title">Hamburguesas De León</h1>
+                </div>
+            </header>
+            <nav>
+                <div class="navDesk">
+                    <ul class="navListDesk">
+                        <li class="navIconsDesk"><a href="../../index.html">Página Principal</a><i class="fas fa-home"></i></li>
+                        <li class="navIconsDesk"><a class="menuLink">Menú
+                            <ul class="menuHover">
+                                <a id="ham" href="menu/hamburguesas.html">Hamburguesas</a>
+                                <a id="dogs" href="menu/hotDogs.html">Hot-Dogs</a>
+                                <a id="extra" href="menu/extras.html">Extras</a>
+                            </ul></a><i class="fas fa-book-open"></i>
+                        </li>
+                        <li class="navIconsDesk"><a class="actualPage mainPage" href="">Ubicación</a><i class="fas fa-map-marked-alt"></i></li>
+                    </ul>
+                </div>
+                <div class="navButton">
+                    <i class="fas fa-bars" id="navButton"></i>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <ul class="navList close">
+        <li class="navIcons"><a href="../../index.html">Página Principal</a><i class="fas fa-home"></i></li>
+        <li class="navIcons"><a href="menu.html">Menú</a><i class="fas fa-book-open"></i></li>
+        <li class="navIcons"><a href="">Ubicación</a><i class="fas fa-map-marked-alt"></i></li>
+    </ul>
+    <div class="promoContainer">
+        <div class="woodPlanksTop location">
+            <h2 class="hamNam">UBICACIÓN</h2>
+        </div>
+        <div id="map"></div>
+    </div>
+    <footer class="footer">
+        <div class="contact">
+            <h4>Contacto</h4>
+            <h4>Hamburguesas De León</h4>
+            <p>Esquina en Calle Díaz Mirón y Norte 2<br>Ixtaczoquitlán Centro</p>
+            <p>
+                Número Telefónico: <a href="tel:2722151419"><i class="fas fa-arrow-right"></i> 272 215 1419 <i class="fas fa-arrow-left"></i></a>
+            </p>
+        </div>
+        <div class="horario">
+            <h4>Horario de Trabajo</h4>
+                <h4>Jueves - Domingo</h4>
+                <span>6:30pm - 11:00pm</span>
+        </div>
+        <div class="social">
+            <h4 class="findUs">Encuentranos</h4>
+                <li><a href="https://www.facebook.com/leonburguersori" target="_blank"><img src="../img/faceIcon.png">Hamburguesas de León</a></li>
+                <li><a href="https://www.instagram.com/leonburgers_ori/" target="_blank"><img src="../img/instaIcon.svg">@leonburgers_ori</a></li>
+        </div>
+    </footer>
+    <!-- Código desarrollado por: 
+
+        LINEA ARQUITECTONICA
+    
+    Diseñamos y Construimos tu página web
+    
+    Contacto: 
+        Instagram @a.jared_munoz 
+        Correo Electronico : amunozbaez669@gmail.com -->
+    <script src="../script/location.js"></script>
+    <script src="../script/menuHover.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+</body>
+</html>

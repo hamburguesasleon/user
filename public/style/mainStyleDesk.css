@@ -1,0 +1,395 @@
+:root{
+    --fontColorP: #C9C7E3; 
+    --bgColorP: #242E2D;
+    --fontColorH: #348AC0;
+    --menuBg: #2e3635;
+    --priceColor: #195;
+    --redWarning: #ff3d3d;
+    --priceLetter: #dddce6;
+}
+@media only screen and (min-width: 1024px) {
+    *{
+        font-family: 'Lato', sans-serif;
+    }
+    body{
+        background-color: var(--bgColorP);
+    }
+    .fullBody{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .navButton{
+        display: none;
+    }
+    .fas{
+        display: none;
+    }
+    /* ----HEADER---- */
+
+    .header-container{
+        display: flex;
+        position: fixed;
+        background-image: none;
+        border-bottom: 2px solid var(--fontColorP);
+        width: 100%;
+        height: 10vh; 
+    }
+    header{
+        width: 40%;
+    }
+    .logo{
+        display: flex;
+        justify-content: space-evenly;
+        background-image: none;
+        background-color: var(--bgColorP);
+        border: none;
+        width: 100%;
+        height: 9.6vh;
+        padding: 0;
+    }
+    .logo-img{
+        display: none;
+    }
+    .title{
+        font-size: 40px;
+        color: var(--fontColorP);
+        font-family: 'Playball', cursive;
+    }
+
+    /* ----NAV---- */
+
+    nav{
+        width: 60%;
+        height: 100%;
+    }
+    .navDesk, .navListDesk{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bgColorP);
+    }
+    .navIconsDesk{
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        list-style: none;
+    }
+    .navIconsDesk a{
+        text-decoration: none;
+        color: var(--fontColorP);
+        width: 180px;
+        text-align: center;
+    }
+    .actualPage{
+        color: var(--fontColorH) !important;
+    }
+    .actualPage::after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--fontColorH);
+    }
+    .navIconsDesk a:hover, .menuHover li:hover{
+        color: var(--fontColorH);
+    }
+    .menuLink{
+        height: 100%;
+        line-height: 10vh;
+        cursor: pointer;
+    }
+    .menuHover{
+        display: none;
+        position: absolute;
+        top: calc(10vh - 2px);
+        background: linear-gradient(145deg, #273130, #202929);
+        box-shadow:  8px 8px 30px #1b2221,
+                    -8px -8px 30px #2d3a39;
+                    border-bottom: 2px solid var(--fontColorP);
+        padding: 10px 25px 20px 25px;
+        width: 180px;
+        color: var(--fontColorP);
+        list-style: none;
+        line-height: 2;
+        flex-wrap: wrap;
+    }
+
+    /* ----FOOTER---- */
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
+        top: 9.9vh;
+        background-color: var(--bgColorP);
+        border: none;
+        padding: 15px 10% 0 10%;
+        color: var(--fontColorP);
+    }
+    .footer::after{
+        content: '';
+        position: absolute;
+        left: calc(50% + 2px);
+        background-color: var(--fontColorP);
+        width: 1px;
+        height: 120px;
+    }
+    .footer span, .footer a{
+        display: inline-block;
+        line-height: normal;
+    }
+    .horario, .contact, .social{
+        flex-grow: 1;
+        min-width: 40%;
+        height: 120px;
+        margin-top: 0;
+        font-weight: 400;
+    }
+    .footer h4, .social h4{
+        font-size: 24px !important;
+        font-weight: 400;
+        color: #eee;
+    }
+    .footer h4:nth-child(2), .footer h4:nth-child(4){
+        font-size: 19px !important;
+    }
+    .contact{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        min-width: 40%;
+        text-align: start;
+    }
+    .horario{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-around;
+        min-width: 40%;
+        text-align: end;
+    }
+    .social{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-around;
+        margin-top: 15px;
+        height: 90px;
+    }
+    .findUs{
+        min-width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    .social li, .social li a{
+        display: flex;
+        align-items: center;
+        height: 30px;
+        flex-grow: 1;
+    }
+
+    /* ----INDEX---- */ 
+
+    .promoContainer{
+        position: relative;
+        top: 9.9vh;
+        background-size: cover;
+        background-position: top;
+        border-bottom: 2px solid var(--fontColorP);
+        height: 90vh;
+    }
+
+    /* ----MENU---- */
+
+    .container-menu-cards{
+        position: relative;
+        top: 9.9vh;
+        background-size: cover;
+        background-position: top;
+        border-bottom: 2px solid var(--fontColorP);
+        height: 90vh;
+    }
+    .card-name, .cards{
+        height: 20vh;
+        margin: 0 !important;
+    }
+    .containerMenu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: var(--bgColorP);
+    }
+
+    /* ----LOCATION---- */
+
+    #map{
+        width: 100% !important;
+        height: 90vh !important;
+    }
+    .location{
+        display: none;
+    }
+
+    /* ----HAMBURGUESA---- */ 
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
+        top: 9.9vh;
+        background-color: var(--bgColorP);
+        border-bottom: 2px solid var(--fontColorP);
+        height: 1200px;
+    }
+    .containerImg{
+        position: relative;
+        left: 0;
+        width: 45vw;
+        height: 100%;
+        background-image: url('../img/classic.jpg'), 
+                        url('../img/leon.jpg'),
+                        url('../img/bbq.jpg');
+        background-position: top 0 left 0, 
+                        top 400px left 0,
+                        top 800px left 0;
+        background-repeat: no-repeat;
+        border-right: 1px solid var(--fontColorP);
+        background-size: 100% 400px, 
+                        100% 400px,
+                        100% 400px;
+    }
+    #classic, #bbq, #leon{
+        position: absolute;
+        display: inline-block;
+        background-color: var(--menuBg);
+        border-radius: 0 0 0 12px;
+        padding: 5px 5px 10px 10px;
+        font-family: 'Playball', cursive;
+        font-size: 29px;
+        color: var(--fontColorP);
+        font-weight: 400;
+    }
+    .iconName::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 104%;
+        height: 2px;
+        background-color: var(--fontColorP);
+        border-radius: 0 0 0 2px;
+    }
+    #classic{
+        top: 0;
+        right: 0;
+    }
+    #leon{
+        top: 400px;
+        right: 0;
+    }
+    #bbq{
+        top: 800px;
+        right: 0;
+    }
+    .containerHam{
+        position: relative;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: space-between;
+        width: 55vw;
+        height: 100%;
+        padding: 0 2vw 0 2vw;
+    }
+    .woodPlanksTop{
+        display: none;
+    }
+    .menu{
+        flex-direction: column;
+        position: relative;
+        border-radius: 18px;
+        background: var(--menuBg);
+        box-shadow:  13px 13px 20px #282f2e;
+        width: 24vw;
+        height: 250px;
+    }
+    .container-child:last-child{
+        margin: 0;
+        flex-grow: 1;
+        display: flex;
+        background-image: url('../img/skyline.jpg');
+        background-size: 42% 220px;
+        background-position: top 15px right 15px;
+        background-repeat: no-repeat;
+    }
+    .menu:last-child .hamNameDesk, .menu:last-child .ingr{
+        position: absolute;
+        left: 0;
+        width: 54%;
+    }
+    .menu:last-child .ingr{
+        top: 50px;
+        padding: 0 35px 0 35px;
+    }
+    .hamImg{
+        display: none;
+        border: none;
+    }
+    .hamNameDesk{
+        width: 100%;
+        height: 50px;
+        letter-spacing: 2px;
+        font-family: 'Italianno', cursive;
+        color: var(--fontColorH);
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 60px;
+        text-align: center;
+    }
+    .hamPrice{
+        position: relative;
+        width: 100%;
+        height: 200px;
+        font-size: 17.5px;
+        line-height: 1.5;
+        font-weight: 400;
+        padding: 5px 30px 10px 30px;
+    }
+    .price{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: var(--priceColor);
+        border-radius: 18px 0 18px 0;
+        padding: 15px;
+    }
+    .menu:last-child .price{
+        bottom: -50px;
+        left: 0;
+        width: 70.91px;
+        border-radius: 0 18px 0 18px;
+    }
+    .price::before, .price p{
+        color: var(--priceLetter);
+    }
+    .price p{
+        margin-left: 3px;
+        font-weight: 400;
+    }
+    .ingr{
+        color: var(--fontColorP);
+        width: 100%;
+    }
+    .ingr span{
+        color: var(--redWarning);
+    }
+}
