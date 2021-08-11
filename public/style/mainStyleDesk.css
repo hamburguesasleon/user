@@ -385,7 +385,7 @@
         border-radius: 18px 0 18px 0;
         padding: 15px;
     }
-    .menu:last-child .price{
+    .menuHam:last-child .price{
         bottom: -50px;
         left: 0;
         width: 70.91px;
@@ -405,8 +405,11 @@
     .ingr span{
         color: var(--redWarning);
     }
+    .containerHotDogs{
+        height: 89vh !important;
+    }
     .container-child-hotDogs:last-child .price{
-        position: absolute;
+        position: absolute !important;
         bottom: 0;
         right: 0 !important;
         background-color: var(--priceColor);
