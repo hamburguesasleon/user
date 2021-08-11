@@ -340,6 +340,19 @@
         top: 50px;
         padding: 0 35px 0 35px;
     }
+    .container-child-hotDogs:last-child .hamNameDesk, .container-child-hotDogs:last-child .ingr{
+        position: static;
+        width: 100%;
+        left: none;
+    }
+    .container-child-hotDogs:last-child .ingr{
+        padding: 0;
+    }
+    .container-child-hotDogs:last-child{
+        flex-grow: 0;
+        background-image: none;
+        display: block;
+    }
     .hamImg{
         display: none;
         border: none;
@@ -391,5 +404,13 @@
     }
     .ingr span{
         color: var(--redWarning);
+    }
+    .container-child-hotDogs:last-child .price{
+        position: absolute;
+        bottom: 0;
+        right: 0 !important;
+        background-color: var(--priceColor);
+        border-radius: 18px 0 18px 0;
+        padding: 15px;
     }
 }
