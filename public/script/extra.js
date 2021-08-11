@@ -10,12 +10,12 @@ const arrayHam = [
 
 const containerTemplate = document.querySelector('#ham-card').content;
 const frag = document.createDocumentFragment();
-const containerHTML = document.querySelector('.container');
+const containerHTML = document.querySelector('.containerHam');
 let count = 0;
 
 arrayHam.forEach(ham => {
-    containerTemplate.querySelector('.hamName').textContent = arrayHam[count][0];
-    containerTemplate.getElementById('extraImg').setAttribute('src', arrayHam[count][2]);
+    containerTemplate.querySelector('.hamNameDesk').textContent = arrayHam[count][0];
+    containerTemplate.getElementById('hamImg').setAttribute('src', arrayHam[count][2]);
     containerTemplate.querySelector('.hamPrice i p').textContent = arrayHam[count][1];
     const clone = containerTemplate.cloneNode(true);
     frag.appendChild(clone);
