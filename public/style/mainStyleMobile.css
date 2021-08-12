@@ -30,8 +30,6 @@ body{
     width: 100%;
     height: 100vh;
     background-color: var(--bgColorP);
-    background-size: contain;
-    z-index: 50;
 }
 .containerImg{
     display: none;
@@ -47,7 +45,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 10vh;
     border-bottom: 1px solid #fff;
     z-index: 900;
 }
@@ -74,9 +72,6 @@ nav{
     width: 100vw;
     height: 35px;
     border-bottom: 2px solid #fff;
-    background-size: cover;
-    background-position: top;
-    margin-bottom: 20px;
     padding: 5px 10px;
     z-index: 750;
 }
@@ -109,9 +104,12 @@ nav{
     margin-left: 15px;
 }
 .navIcons a{
+    font-family: 'Charm', cursive;
     color: var(--fontColorP);
     font-weight: 400;
+    font-size: 35px;
     text-decoration: none;
+    transition-duration: 1s;
 }
 .navListMenu{
     display: none;
@@ -127,7 +125,13 @@ nav{
     font-size: 45px;
     color: var(--fontColorP);
 }
+.actualPage{
+    color: var(--fontColorH) !important;
+    transition-duration: 1s;
+}
+
 /* ----NAV ANIMATION---- */
+
 .locationNav{
     position: absolute;
     animation-name: menuOpen;
@@ -215,6 +219,7 @@ nav{
         left: calc(50vw - 89.69px);
     }
 }
+
 /* ----FOOTER----*/
 
 .footer{
@@ -239,8 +244,8 @@ nav{
 }
 .footer a{
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-top: 2vh;
 }
 @media only screen and (max-width: 425px){
     .contact p:last-child, .horario{
@@ -254,13 +259,15 @@ nav{
         padding-bottom: 2vh;
         font-weight: 400;
     }
-    .contact p:last-child a{
-        padding-top: 2vh;
-        letter-spacing: .5vw;
-    }
     .contact p:last-child{
-        top: -12vh;
-        left: -15vw;
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        top: -15vh;
+        text-align: center;
+    }
+    .contact p:last-child a{
+        letter-spacing: .5vw;
     }
     .footer::after{
         content: '';
@@ -269,17 +276,30 @@ nav{
         left: calc(50% + 2px);
         background-color: var(--fontColorP);
         width: 1px;
-        height: 11vh;
+        height: 12vh;
     }
     .contact{
         position: absolute;
-        top: 15vh;
-        left: calc(50vw - 123.61px)
+        top: 17vh;
+        left: 4vw;
+        text-align: start;
+    }
+    .contact h4, .findUs{
+        margin-bottom: 2vh;
+        font-weight: 400;
+        font-size: 2.3vh;
+    }
+    .contact h4:first-child{
+        font-size: 3.2vh;
     }
     .social{
         position: absolute;
-        top: 26vh;
-        left: calc(50vw - 93.775px);
+        top: 33vh;
+        left: 4vw;
+        text-align: start;
+    }
+    .findUs{
+        margin: 0;
     }
 }
 
