@@ -1,24 +1,59 @@
 // ABRIR CERRAR NAV-------------------------------------------------------
 
-const bars = document.getElementById('navButton')
-const nav = document.querySelector('nav').content;
+const bars = document.getElementById('navButton');
 const ulNav = document.querySelector('.navList');
-let navOpen = false;
+const menuNav = document.querySelector('.navListMenu');
+const close = document.querySelector('.fa-times');
+const menuClick = document.querySelector('.navMenu')
+const locationNav = document.getElementById('locationNav');
+let menuOpen = 0;
 
 bars.addEventListener('click', e => {
-    if (navOpen == false){
-        ulNav.style.display = "block";
-        bars.classList.replace('fa-bars', 'fa-times');
-        navOpen = true;
-        ulNav.classList.toggle('open');
+    ulNav.classList.toggle('open')
+    ulNav.style.display = 'flex';
+    if (ulNav.classList.contains('close')){
+        ulNav.classList.toggle('close')
+    }
+})
+close.addEventListener('click', e => {
+    //Se resuelve error Menu Abierto
+    if (menuOpen == 1){
+        setTimeout(function (){
+            locationNav.classList.remove('locationNav');
+            menuNav.style.display = 'none';
+        }, 1000)
+        menuOpen = 0;
+    }
+    if (ulNav.classList.contains('open')){
         ulNav.classList.toggle('close');
     }
-    else {
-        bars.classList.replace('fa-times', 'fa-bars');
-        navOpen = false;
-        ulNav.classList.toggle('open');
-        ulNav.classList.toggle('close');
+    ulNav.classList.toggle('open');
+    setTimeout(function (){
+        ulNav.style.display = 'none'
+    }, 1000 );
+})
+
+menuClick.addEventListener('click', e => {
+    if (menuOpen == 0){
+        menuNav.classList.remove('menuListClose');
+        locationNav.classList.toggle('locationNav');
+        setTimeout(function (){
+            menuNav.style.display = 'block'
+            menuNav.classList.add('menuList')
+        }, 500);
+        menuOpen = 1;
     }
+    else if (menuOpen == 1){
+        menuNav.classList.remove('menuList');
+        menuNav.classList.add('menuListClose')
+        setTimeout(function (){
+            locationNav.classList.remove('locationNav')
+            locationNav.classList.add('locationNavClose');
+            menuNav.style.display = 'none';
+        }, 500)
+        menuOpen = 0;
+    }
+    locationNav.classList.remove('locationNavClose');
 })
 
 //MENU LINKS

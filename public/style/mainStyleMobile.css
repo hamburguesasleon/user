@@ -1,3 +1,12 @@
+:root{
+    --fontColorP: #C9C7E3; 
+    --bgColorP: #242E2D;
+    --fontColorH: #348AC0;
+    --menuBg: #2e3635;
+    --priceColor: #195;
+    --redWarning: #ff3d3d;
+    --priceLetter: #dddce6;
+}
 /* ---ESTRUCTURA DE LOS ELEMENTOS---
 
 .caja{
@@ -15,24 +24,23 @@
 
 */
 *{
-    font-family: 'Raleway', sans-serif;
-}
-.fullBody{
-    overflow-y: hidden;
+    font-family: 'Lato', sans-serif;
 }
 body{
     width: 100%;
     height: 100vh;
-    background-image: url('../img/footer.jpg');
+    background-color: var(--bgColorP);
     background-size: contain;
     z-index: 50;
 }
-
+.containerImg{
+    display: none;
+}
 /* ----HEADER---- */
 
 .header-container{
-    background-image: url('../img/plank.jpg');
     position: relative;
+    background-color: var(--bgColorP);
     z-index: 700;
 }
 .logo{
@@ -41,21 +49,17 @@ body{
     align-items: center;
     height: 100px;
     border-bottom: 1px solid #fff;
-    background-color: rgba(179, 117, 54, 0.466);
-    padding: 20px;
-    z-index: 1000;
-}
-.logo-img{
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
+    z-index: 900;
 }
 .title{
-    color: #fff;
-    font-weight: 500;
+    font-family: 'Playball', cursive;;
+    color: var(--fontColorP);
+    font-size: 10vw;
+    font-weight: 400;
 }
 
 /* ----NAV---- */
+
 .navDesk{
     display: none;
 }
@@ -70,8 +74,6 @@ nav{
     width: 100vw;
     height: 35px;
     border-bottom: 2px solid #fff;
-    box-shadow: 0 .5px 7px #000;
-    background-color: rgba(179, 117, 54, 0.466);
     background-size: cover;
     background-position: top;
     margin-bottom: 20px;
@@ -83,84 +85,152 @@ nav{
     font-size: 25px;
 }
 .navList{
-    animation-name: closeNav;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
     display: none;
+    flex-direction: column;
+    justify-content: flex-start;
     position: absolute;
-    top: -135px;
-    width: 250px;
-    height: 300px;
-    border-radius: 0 0 15px 0;
-    box-shadow: 2px 2px 10px #000;
-    background-image: url('../img/woodNavListCom.jpg');
-    background-size: cover;
-    margin-top: -20px;
-    padding: 30px;
+    background-color: var(--menuBg);
+    border-bottom: 3px solid var(--fontColorP);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
     font-size: 30px;
-    font-weight: 600;
-    z-index: 600;
+    z-index: 1000;
 }
 .navIcons{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 10px;
     text-align: center;
-    color: #fff;
     list-style: none;
+    margin-bottom: 13vh;
 }
 .navIcons i{
-    margin-left: 7px;
+    margin-left: 15px;
 }
 .navIcons a{
-    color: #fff;
+    color: var(--fontColorP);
+    font-weight: 400;
     text-decoration: none;
 }
-
+.navListMenu{
+    display: none;
+}
+.navListMenu li{
+    list-style: none;
+    margin-bottom: 30px;
+}
+.fa-times{
+    position: absolute;
+    bottom: 5vh;
+    left: calc(50vw - 22.5px);
+    font-size: 45px;
+    color: var(--fontColorP);
+}
 /* ----NAV ANIMATION---- */
-
+.locationNav{
+    position: absolute;
+    animation-name: menuOpen;
+    animation-fill-mode: forwards;
+    animation-duration: .7s;
+    top: calc(39vh + 80px);
+    left: calc(50vw - 89.69px);
+}
+.locationNavClose{
+    position: absolute;
+    animation-fill-mode: forwards;
+    animation-name: menuClose;
+    animation-duration: .7s;
+}
+.menuList{
+    position: relative;
+    animation-name: menuList;
+    animation-fill-mode: forwards;
+    animation-duration: .7s;
+}
+.menuListClose{
+    position: relative;
+    right: -100%;
+    animation-name: menuListClose;
+    animation-duration: .7s;
+}
 .open{
     animation-name: openNav;
-    animation-duration: .5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
-
+.close{
+    animation-name: closeNav;
+    animation-duration: 1s;
+}
 @keyframes openNav {
-    0% {
-        top: -135px;
+    from {
+        bottom: 100%;
     }
-    100% {
-        top: 135px;
+    to {
+        bottom: 0;
     }
 }
 @keyframes closeNav {
-    0% {
-        top: 135px;
+    from {
+        bottom: 0;
     }
-    100% {
-        top: -135px;
+    to {
+        bottom: 100%;
     }
 }
-
+@keyframes menuOpen {
+    from {
+        top: calc(39vh + 60px);
+        left: calc(50vw - 89.69px);
+    }
+    to {
+        top: calc(39vh + 300px);
+        left: calc(50vw - 89.69px);
+    }
+}
+@keyframes menuList {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
+}
+@keyframes menuListClose {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100%;
+    }
+}
+@keyframes menuClose {
+    from {
+        top: calc(39vh + 300px);
+        left: calc(50vw - 89.69px);
+    }
+    to {
+        top: calc(39vh + 60px);
+        left: calc(50vw - 89.69px);
+    }
+}
 /* ----FOOTER----*/
 
 .footer{
+    position: relative;
     border-top: 4px solid #fff;
-    -webkit-text-stroke: .21px black;
-    background-size: cover;
-    background-color: #343a40;
-    padding: 15px;
+    padding: 15px 30px;
     text-align: center;
-    color: #999;
+    color: var(--fontColorP);
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 400;
 }
 .footer a, .footer li, .footer span{
     display: block;
     text-decoration: none;
     list-style: none;
-    color: #90c3fd; 
+    color: var(--fontColorH); 
 }
 .footer img{
     width: 25px;
@@ -172,13 +242,46 @@ nav{
     justify-content: center;
     align-items: center;
 }
-.faceIcon{
-    margin-top: 5px;
+@media only screen and (max-width: 425px){
+    .contact p:last-child, .horario{
+    position: absolute;
+    top: 2vh;
+    }
+    .horario{
+        right: 7vw;
+    }
+    .horario h4{
+        padding-bottom: 2vh;
+        font-weight: 400;
+    }
+    .contact p:last-child a{
+        padding-top: 2vh;
+        letter-spacing: .5vw;
+    }
+    .contact p:last-child{
+        top: -12vh;
+        left: -15vw;
+    }
+    .footer::after{
+        content: '';
+        top: 2vh;
+        position: absolute;
+        left: calc(50% + 2px);
+        background-color: var(--fontColorP);
+        width: 1px;
+        height: 11vh;
+    }
+    .contact{
+        position: absolute;
+        top: 15vh;
+        left: calc(50vw - 123.61px)
+    }
+    .social{
+        position: absolute;
+        top: 26vh;
+        left: calc(50vw - 93.775px);
+    }
 }
-.horario{
-    margin-top: 15px;
-}
-
 
 /* ---------INDEX--------- */
 
