@@ -309,6 +309,7 @@ nav{
 /* ----CONTENEDOR DE PROMOCIONES---- */
 
 .promoContainer, .promoContainer img{
+    overflow-x: hidden;
     position: relative;
     display: flex;
     justify-content: space-around;

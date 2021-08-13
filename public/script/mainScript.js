@@ -42,7 +42,7 @@ function correccion (){
     }
 }
 function slider (){
-    if (arrow == 0){
+    if (arrow == 1){
         imgAct.classList.add('leftMoveAct');
         imgSig.classList.add('leftMoveSig');
         promo += 1;
@@ -57,7 +57,7 @@ function slider (){
             imgSig.classList.remove('leftMoveSig');
         }, 500);
     }
-    if (arrow == 1){
+    if (arrow == 0){
         imgAct.classList.add('rightMoveAct');
         imgAnt.classList.add('rightMoveAnt');
         promo -= 1;
