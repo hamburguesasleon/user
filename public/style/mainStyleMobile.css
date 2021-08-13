@@ -308,15 +308,26 @@ nav{
 
 /* ----CONTENEDOR DE PROMOCIONES---- */
 
-.promoContainer{
+.promoContainer, .promoContainer img{
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100vw;
     height: 300px;
-    background-size: cover;
-    background-position: center;
     color: #fff;
+}
+.promoContainer img{
+    position: absolute;
+}
+.imgAnt{
+    right: 100%;
+}
+.imgAct{
+    right: 0;
+}
+.imgSig{
+    right: -100%;
 }
 .promoTitle{
     width: 270px;
@@ -341,6 +352,58 @@ nav{
     right: 20px;
 }
 
+/* ----SLIDER ANIMATIONS---- */
+
+.leftMoveSig{
+    animation-name: leftMoveSig;
+    animation-duration: .5s;
+}
+.leftMoveAct{
+    animation-name: leftMoveAct;
+    animation-duration: .5s;
+}
+.rightMoveAct{
+    animation-name: rightMoveAct;
+    animation-duration: .5s;
+}
+.rightMoveAnt{
+    animation-name: rightMoveAnt;
+    animation-duration: .5s;
+}
+
+@keyframes leftMoveSig {
+    from {
+        right: -100%;
+    }
+    to {
+        right: 0;
+    }
+}
+@keyframes leftMoveAct {
+    from {
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes rightMoveAnt {
+    from {
+        right: 100%;
+    }
+    to {
+        right: 0;
+    }
+}
+@keyframes rightMoveAct {
+    from {
+        right: 0;
+    }
+    to {
+        right: -100%;
+    }
+}
 
 /* ---------MENU--------- */
 
