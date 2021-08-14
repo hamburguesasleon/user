@@ -21,6 +21,18 @@ let menuCount = ('menu' + count);
 
 arrayHam.forEach(ham => {
     containerTemplate.querySelector('.hamNameDesk').textContent = arrayHam[count][0];
+    if (count == 3){
+        containerTemplate.querySelector('.hamPrice').classList.add('porcina');
+    }
+    else {
+        containerTemplate.querySelector('.hamPrice').classList.remove('porcina');
+    }
+    if (count == 6){
+        containerTemplate.querySelector('.hamPrice').classList.add('sky');
+    }
+    else {
+        containerTemplate.querySelector('.hamPrice').classList.remove('sky');
+    }
     containerTemplate.getElementById('hamImg').setAttribute('src', arrayHam[count][3]);
     containerTemplate.querySelector('.ingr').innerHTML = arrayHam[count][1];
     containerTemplate.querySelector('.hamPrice i p').textContent = arrayHam[count][2];
