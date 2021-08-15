@@ -442,7 +442,7 @@ nav{
         top: 2vh;
         font-family: 'Italianno', cursive;
         color: var(--fontColorH) !important;
-        font-size: 4vh;
+        font-size: 4.2vh;
         font-weight: 400;
     }
     .hamPrice{
@@ -450,7 +450,7 @@ nav{
         bottom: 0;
         right: 0;
         width: 60%;
-        padding: 2vh 2vh 6vh 2vh;
+        padding: 2.2vh 2vh 5vh 2vh;
         font-size: 2vh;
         color: var(--fontColorP);
     }
