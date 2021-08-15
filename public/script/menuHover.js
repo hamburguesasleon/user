@@ -7,6 +7,7 @@ const close = document.querySelector('.fa-times');
 const menuClick = document.querySelector('.navMenu');
 const home = document.getElementById('home');
 const locationNav = document.getElementById('locationNav');
+
 let menuOpen = 0;
 
 bars.addEventListener('click', e => {
@@ -38,8 +39,13 @@ close.addEventListener('click', e => {
 
 menuClick.addEventListener('click', e => {
     if (menuOpen == 0){
-        home.classList.toggle('actualPage');
-        menuClick.classList.toggle('actualPage');
+        if(menuClick.classList.contains('actualPage')){
+
+        }
+        else{    
+            home.classList.toggle('actualPage');
+            menuClick.classList.toggle('actualPage');
+        }
         menuNav.classList.remove('menuListClose');
         locationNav.classList.toggle('locationNav');
         setTimeout(function (){
@@ -49,8 +55,13 @@ menuClick.addEventListener('click', e => {
         menuOpen = 1;
     }
     else if (menuOpen == 1){
-        home.classList.toggle('actualPage');
-        menuClick.classList.toggle('actualPage');
+        if (menuClick.classList.contains('actualPage') && document.querySelector('.containerHam')){
+
+        }
+        else{
+            home.classList.toggle('actualPage');
+            menuClick.classList.toggle('actualPage');
+        }
         menuNav.classList.remove('menuList');
         menuNav.classList.add('menuListClose');
         setTimeout(function (){
