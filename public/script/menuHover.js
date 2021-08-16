@@ -18,7 +18,7 @@ bars.addEventListener('click', e => {
     }
 })
 close.addEventListener('click', e => {
-    //Resuelve errores al cerrar el Nav
+//Resuelve errores al cerrar el Nav
     if (menuOpen == 1){
         setTimeout(function (){
             locationNav.classList.remove('locationNav');
@@ -28,6 +28,7 @@ close.addEventListener('click', e => {
         }, 1000);
         menuOpen = 0;
     }
+//
     if (ulNav.classList.contains('open')){
         ulNav.classList.toggle('close');
     }

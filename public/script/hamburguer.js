@@ -1,25 +1,23 @@
 //Hamburguesas
 
 const arrayHam = [
-    ['Godinez', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Queso Manchego<br><span>¡SIN papas a la Francesa!</span>', '40', "../../img/ham.jpg"],
-    ['Clásica', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Jamón, Queso Amarillo, Queso Manchego, Papas a la Francesa', '50', "../../img/ham.jpg"],
-    ['Hawaiana', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Piña, Jamón, Queso Amarillo, Queso de Hebra, Papas a la Francesa', '58', '../../img/ham.jpg'],
-    ['Porcina', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Chistorra, Jamón, Queso de Hebra, Queso Manchego, Papas a la Francesa', '59', '../../img/ham.jpg'],
-    ['BBQ Clásica', 'Carne de Res, Aros de Cebolla, Tocino, Queso Amarillo, Queso Manchego, Salsa BBQ, Papas a la Francesa', '65', '../../img/ham.jpg'],
-    ['De León', 'Carne de Res, Jitomate, Lechuga, Aros de Cebolla, Tocino, Jamón, Queso Amarillo, Queso Manchego, Aguacate, Papas a la Francesa', '68', "../../img/ham.jpg"],
-    ['Rascacielos', 'Carne de Res, Jitomate, Lechuga, Aros de Cebolla, Chistorra, Salchicha, Tocino, Queso De Hebra, Queso Manchego, Aguacate, Papas a la Francesa', '78', '../../img/ham.jpg']
+    ['Godinez', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Queso Manchego<br><span>¡SIN papas a la Francesa!</span>', '40', "../../img/ham.jpg", '0'],
+    ['Clásica', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Jamón, Queso Amarillo, Queso Manchego, Papas a la Francesa', '50', "../../img/classic.jpg", '1'],
+    ['Hawaiana', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Piña, Jamón, Queso Amarillo, Queso de Hebra, Papas a la Francesa', '58', '../../img/ham.jpg', '2'],
+    ['Porcina', 'Carne de Res, Jitomate, Lechuga, Cebolla Caramelizada, Chistorra, Jamón, Queso de Hebra, Queso Manchego, Papas a la Francesa', '59', '../../img/ham.jpg', '3'],
+    ['BBQ Clásica', 'Carne de Res, Aros de Cebolla, Tocino, Queso Amarillo, Queso Manchego, Salsa BBQ, Papas a la Francesa', '65', '../../img/bbq.jpg', '4'],
+    ['De León', 'Carne de Res, Jitomate, Lechuga, Aros de Cebolla, Tocino, Jamón, Queso Amarillo, Queso Manchego, Aguacate, Papas a la Francesa', '68', "../../img/hamLeon.jpg", '5'],
+    ['Rascacielos', 'Carne de Res, Jitomate, Lechuga, Aros de Cebolla, Chistorra, Salchicha, Tocino, Queso De Hebra, Queso Manchego, Aguacate, Papas a la Francesa', '78', '../../img/skyline.jpg', '6']
 ]
 
 //Tarjetas-Hamburguesas
 
 const containerTemplate = document.querySelector('#ham-card').content;
 const frag = document.createDocumentFragment();
-const menu = document.querySelector('.menu');
-const containerHTML = document.querySelector('.containerHam');
+const containerHam = document.querySelector('.containerHam');
 let count = 0;
-let menuCount = ('menu' + count);
 
-arrayHam.forEach(ham => {
+arrayHam.forEach( () => {
     containerTemplate.querySelector('.hamNameDesk').textContent = arrayHam[count][0];
     if (count == 3){
         containerTemplate.querySelector('.hamPrice').classList.add('porcina');
@@ -36,9 +34,44 @@ arrayHam.forEach(ham => {
     containerTemplate.getElementById('hamImg').setAttribute('src', arrayHam[count][3]);
     containerTemplate.querySelector('.ingr').innerHTML = arrayHam[count][1];
     containerTemplate.querySelector('.hamPrice i p').textContent = arrayHam[count][2];
+    containerTemplate.querySelector('.menu').setAttribute('value', `ham${count}`)
+    containerTemplate.querySelector('.plusHam').setAttribute('value', count)
     const clone = containerTemplate.cloneNode(true);
     frag.appendChild(clone);
     count++;
 })
 
-containerHTML.appendChild(frag);
+containerHam.appendChild(frag);
+
+//ABRIR INFO HAMBURGUESAS
+
+const hamInfoCard = document.querySelector('.hamInfoCard');
+const hamInfoTitle = document.querySelector('.hamInfoTitle');
+const hamInfoIngr = document.querySelector('.hamInfoIngr');
+const closeCard = document.querySelector('.closeCard');
+const priceInCard = document.querySelector('.hamInfoPrice');
+const hamInfoImg = document.querySelector('.hamInfoImg')
+
+containerHam.addEventListener('click', e => {
+    const plus = e.target;
+    let select,
+        ham = 0;
+    //Hacemos busqueda en el array
+    arrayHam.forEach( ham => {
+        if(plus.getAttribute('value') == ham[4]){
+            select = ham[4];
+            hamInfoCard.style.display = 'flex';
+        }
+    })
+    //Solucionar error en consola UNDEFINED
+    if (select != undefined){
+        hamInfoImg.setAttribute('src', arrayHam[select][3])
+        hamInfoTitle.textContent = arrayHam[select][0];
+        hamInfoIngr.innerHTML = arrayHam[select][1];
+        priceInCard.textContent = arrayHam[select][2];
+    }
+})
+
+closeCard.addEventListener('click', e => {
+    hamInfoCard.style.display = 'none'
+})
