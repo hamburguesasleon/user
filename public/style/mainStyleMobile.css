@@ -458,7 +458,7 @@ nav{
     .hamNameDesk{
         position: absolute;
         left: 45%;
-        top: 1.2vh;
+        top: 2vh;
         font-family: 'Italianno', cursive;
         color: var(--fontColorH);
         font-size: 4.2vh;
@@ -469,9 +469,14 @@ nav{
         bottom: 0;
         right: 0;
         width: 60%;
+        height: 100%;
         padding: 2.2vh 2vh 5vh 2vh;
         font-size: 2vh;
         color: var(--fontColorP);
+    }
+    .ingr{
+        position: absolute;
+        top: 8.2vh;
     }
     .ingr3{
         padding-bottom: 2;
@@ -510,9 +515,9 @@ nav{
         position: fixed;
         display: none;
         flex-direction: column;
-        top: 5vh;
-        width: 90vw;
-        height: 90vh;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
         background-color: var(--menuBg);
         z-index: 1000;
     }
@@ -532,8 +537,28 @@ nav{
     .cardIcons{
         width: 50px;
     }
+    .closeCard{
+        margin: 2.5vh 1.5vh;
+        width: 3vh;
+    }
     .hamInfoImg{
+        margin: 0 4.5vw 4.5vw 4.5vw;
+        border-radius: 5vw;
         height: 40%;
+    }
+    .hamInfo{
+        border-top: 1px solid var(--fontColorP);
+        padding: 4.5vw;
+    }
+    .hamInfoTitle{
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: 6vh;
+    }
+    .hamInfoIngr{
+        color: var(--fontColorP);
+        font-size: 2.2vh;
     }
 }
 
